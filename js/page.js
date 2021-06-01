@@ -42,7 +42,11 @@
     )*/
 
     togglePaperplane.addEventListener('click', e => {
-        paperplane.style.display = 'block'
+        if (paperplane.style.display === 'none') {
+            paperplane.style.display = 'block'
+        } else {
+            paperplane.style.display = 'none'
+        }
     }
     )
 
