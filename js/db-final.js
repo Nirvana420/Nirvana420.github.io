@@ -554,6 +554,7 @@ auth.onAuthStateChanged(user => {
         );
 
         document.querySelector("#fileForm").addEventListener("submit", e => {
+            document.querySelector('#uploadPicBtn').disabled = true
             document.getElementById('postEventBtn').innerText = 'Wait a Sec...'
             document.getElementById('postEventBtn').disabled = true
             e.preventDefault();
@@ -585,6 +586,7 @@ auth.onAuthStateChanged(user => {
                         document.getElementById('postEventBtn').innerText = 'Upload'
                         document.getElementById('postEventBtn').disabled = false
                         document.querySelector('.upload-post').style.height = '0px'
+                        document.querySelector('#uploadPicBtn').disabled = false
                     }
                     ).catch(e => {
                         console.log("Error Occured", e);
@@ -604,6 +606,7 @@ auth.onAuthStateChanged(user => {
 
         document.querySelector("#postForm").addEventListener("submit", e => {
             e.preventDefault();
+            document.querySelector('#postEventBtn').disabled = true
 
             let file = e.target[0].files[0];
             console.log('post ', file);
@@ -625,6 +628,7 @@ auth.onAuthStateChanged(user => {
                         postFeedback.style.color = "green";
                         canvasCtx.clearRect(0, 0, canvas.width, canvas.height);
                         document.querySelector("#fileForm").reset();
+                        document.querySelector('#postEventBtn').disabled = false
                     }
                     ).catch(e => {
                         console.log("Error Occured", e);

@@ -130,7 +130,8 @@ button:focus {
 
 .user-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
     border-bottom: 1px solid rgb(187 187 187);
     padding: 0.5em;
 }
@@ -326,6 +327,10 @@ button:focus {
     border-radius: 10px;
     color: #fff;
     margin: 2em 0;
+}
+
+.btn:disabled {
+    background-color: grey;
 }
 
 .feedback {
