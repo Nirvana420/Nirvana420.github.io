@@ -28,7 +28,7 @@ let endAt = document.querySelector("#endAt");
 let feedback = document.querySelector(".feedback");
 let postForm = document.querySelector("#postForm");
 let switchBtn = document.querySelector("#switchBtn");
-let postName = document.querySelector("titleName");
+let postName = document.querySelector("#titleName");
 let postCaption = document.querySelector("#titleCaption");
 let postFeedback = document.querySelector('#postFeedback')
 let fileFeedback = document.querySelector('#fileFeedback')
@@ -612,8 +612,8 @@ auth.onAuthStateChanged(user => {
                 r.ref.getDownloadURL().then(url => {
                     db.collection("event").add({
                         eventPicUrl: url,
-                        title: postName,
-                        caption: postCaption,
+                        title: postName.value,
+                        caption: postCaption.value,
                         postedBy: getUser(),
                         photoCommentId: getId(8),
                         photoInterestId: getId(6),
