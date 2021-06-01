@@ -44,8 +44,12 @@
     togglePaperplane.addEventListener('click', e => {
         if (paperplane.style.display === 'none') {
             paperplane.style.display = 'block'
+            togglePaperplane.style.background = "black"
+            togglePaperplane.style.color = "white"
         } else {
             paperplane.style.display = 'none'
+            togglePaperplane.style.background = "transparent"
+            togglePaperplane.style.color = "black"
         }
     }
     )
